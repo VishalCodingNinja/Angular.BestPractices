@@ -31,7 +31,7 @@ export class AuthService {
         apiBase: `${environment.apiBase}`,
         endpoint: endpoint.loginUrl,
         method: 'post',
-        headers: {'x-key': environment.xApiKeyForLogin},
+        headers: {'x-key': x-key},
         body: {
           username: username,
           password: password,
@@ -68,7 +68,7 @@ export class AuthService {
         endpoint: endpoint.logoutUrl,
         method: 'post',
         headers: {
-          'x-key': environment.xApiKeyForLogin,
+          'x-key': x-key,
         },
         body: {accessToken: this.getAccessToken()},
       })
